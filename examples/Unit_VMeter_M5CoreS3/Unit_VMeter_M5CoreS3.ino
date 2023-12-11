@@ -1,8 +1,8 @@
 /*
 *******************************************************************************
 * Copyright (c) 2023 by M5Stack
-*                  Equipped with M5Core3 sample source code
-*                          配套  M5Core3 示例源代码
+*                  Equipped with M5CoreS3 sample source code
+*                          配套  M5CoreS3 示例源代码
 * Visit for more information: https://docs.m5stack.com/en/unit/vmeter
 * 获取更多资料请访问: https://docs.m5stack.com/zh_CN/unit/vmeter
 *
