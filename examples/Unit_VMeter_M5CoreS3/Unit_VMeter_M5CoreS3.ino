@@ -20,8 +20,8 @@ will be overwritten and the measurement results will be inaccurate. 注意: EEPR
 #include <M5CoreS3.h>
 #include <Wire.h>
 #include "M5_ADS1115.h"
-#include "title.h"
-#include "shut.h"
+//#include "title.h"
+//#include "shut.h"
 
 ADS1115 voltmeter;
 
@@ -46,7 +46,7 @@ bool d        = 0;
 void setup(void) {
     M5.begin();
     M5.Lcd.setSwapBytes(true);
-    M5.Lcd.setBrightness(bright[b]);
+    //M5.Lcd.setBrightness(bright[b]);
     Wire.begin();
 
     voltmeter.setMode(SINGLESHOT);
@@ -63,8 +63,8 @@ void setup(void) {
 
     M5.Lcd.fillScreen(BLACK);
 
-    M5.Lcd.pushImage(4, 20, 220, 48, title);
-    M5.Lcd.pushImage(152, 216, 16, 16, shut);
+    //M5.Lcd.pushImage(4, 20, 220, 48, title);
+    //M5.Lcd.pushImage(152, 216, 16, 16, shut);
 
     M5.Lcd.setTextColor(RED, BLACK);
     M5.Lcd.drawString("Warning!", 234, 40, 2);
@@ -73,8 +73,8 @@ void setup(void) {
     M5.Lcd.drawString("measure voltage", 214, 72, 1);
     M5.Lcd.drawString("up to 32 Volts", 214, 84, 1);
     M5.Lcd.drawString("BRIGHTNESS: " + String(b), 16, 4, 1);
-    M5.Lcd.drawString("BATERRY: " + String(M5.Power.getBatteryLevel()) + "%",
-                      226, 4, 1);
+    //M5.Lcd.drawString("BATERRY: " + String(M5.Power.getBatteryLevel()) + "%",
+    //                  226, 4, 1);
 
     M5.Lcd.setTextFont(2);
 
@@ -106,7 +106,7 @@ void setup(void) {
 }
 
 void loop(void) {
-    M5.update();
+    //M5.update();
 
     voltmeter.getValue();
 
@@ -166,13 +166,14 @@ void loop(void) {
         M5.Lcd.fillTriangle(x - 5, 154, x + 5, 154, x, 166, RED);
         xt = x;
     }
-
+    /*
     if (M5.BtnC.wasPressed()) {
         b++;
         if (b > 3) b = 0;
-        M5.Lcd.setBrightness(bright[b]);
+        //M5.Lcd.setBrightness(bright[b]);
         M5.Lcd.drawString("BRIGHTNESS: " + String(b), 16, 4, 1);
     }
 
     if (M5.BtnA.wasPressed()) d = !d;
+    */
 }
