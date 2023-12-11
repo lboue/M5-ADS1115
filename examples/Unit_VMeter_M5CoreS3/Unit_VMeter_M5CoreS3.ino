@@ -33,7 +33,7 @@ uint8_t raw_now_ptr = 0;
 int16_t adc_raw     = 0;
 
 int16_t hope           = 0.0;
-ADS1115Gain_t now_gain = PGA_512;
+ADS1115Gain_t now_gain = PAG_512;
 
 int x     = 0;
 int xt    = 0;
@@ -51,7 +51,7 @@ void setup(void) {
 
     voltmeter.setMode(SINGLESHOT);
     voltmeter.setRate(RATE_128);
-    voltmeter.setGain(PGA_512);
+    voltmeter.setGain(PAG_512);
     hope = pgae512_volt / voltmeter.resolution;
 
     // | PGA      | Max Input Voltage(V) |
